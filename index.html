@@ -71,28 +71,34 @@
           <h1 class="title is-1 publication-title">VLLR: Generalizable Dense Reward for Long-Horizon Robotic Tasks</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://silongyong.github.io/">Silong Yong</a>,</span>
+              <a href="https://silongyong.github.io/">Silong Yong</a><sup>1,*</sup>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/stephen-sheng-14390788/">Stephen Sheng</a>,</span>
+              <a href="https://www.linkedin.com/in/stephen-sheng-14390788/">Stephen Sheng</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://carl-qi.github.io/">Carl Qi</a>,</span>
+              <a href="https://carl-qi.github.io/">Carl Qi</a><sup>3</sup>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/xiaojie-wang-2b8981144/">Xiaojie Wang</a>,</span>
+              <a href="https://www.linkedin.com/in/xiaojie-wang-2b8981144/">Xiaojie Wang</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/evan-sheehan-650856158/">Evan Sheehan</a>,</span>
+              <a href="https://www.linkedin.com/in/evan-sheehan-650856158/">Evan Sheehan</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/anuragshiv/">Anurag Shivaprasad</a>,</span>
+              <a href="https://www.linkedin.com/in/anuragshiv/">Anurag Shivaprasad</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://yaqi-xie.me/">Yaqi Xie</a>,</span>
+              <a href="https://yaqi-xie.me/">Yaqi Xie</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www.cs.cmu.edu/~sycara/">Katia Sycara</a>,
+              <a href="https://www.cs.cmu.edu/~sycara/">Katia Sycara</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/yeshwantdattatreya/">Yesh Dattatreya</a></span>
+              <a href="https://www.linkedin.com/in/yeshwantdattatreya/">Yesh Dattatreya</a><sup>2</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Carnegie Mellon University</span>
+            <span class="author-block"><sup>1</sup> Carnegie Mellon University</span><br>
+            <span class="author-block"><sup>2</sup> Amazon Robotics</span><br>
+            <span class="author-block"><sup>3</sup> The University of Texas at Austin</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup><em> Work done while interning at Amazon Robotics.</em></span>
           </div>
 
           <div class="column has-text-centered">
@@ -149,7 +155,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="content has-text-centered">
-        <img src="./static/images/fig1txt.png" alt="Gauss-Laguerre quadrature visualization" width="75%">
+        <img src="./static/images/teaser.jpg" alt="Our method visualization" width="75%">
       </div>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">VLLR</span> consists of an internal signal from the policy model and an 
@@ -228,81 +234,225 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Method</h2>
-          <p>
-            VLLR is a reward model with three components, i.e. sparse task success reward, 
-            intrinsic reward and extrinsic reward. 
-            The environment provides task instruction and a scene graph context to the LLM for task decomposition. 
-            Then the decomposed subgoals are fed into a VLM together with the current and last observations. 
-            The VLM provides a noisy progress estimate which is then smoothed out 
-            and used as a reward signal for initializing the value function used for PPO. 
-            The intrinsic reward is calculated using the policy's output action distribution. 
-            It is fed together with the task success signal into the PPO algorithm and then produces updates for finetuning the pretrained policy
-          </p>
-          <div class="content has-text-centered">
-            <img src="./static/images/point_sel.png" alt="Gauss-Laguerre quadrature visualization" width="50%">
-          </div>
-        </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <div class="content">
-        <h2 class="title is-3">Per-Step Procedure</h2>
-            <p>
-              In addition to the Stone-Weierstrass theorem, we empirically found that the color function can be approximated by polynomials.
-            </p>
-            <div class="content has-text-centered">
-              <img src="./static/images/fig_motivation.png" alt="Gauss-Laguerre quadrature visualization" width="50%">
-            </div>
-        </div>
-        </div>
-    </div> -->
-    <!--/ Matting. -->
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">GL-NeRF result</h2>
-          <p>
-            GL-NeRF provides on-par results with baseline methods it's adopted on.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/video_ours.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Baseline result</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              TensoRF is served as a baseline example while GL-NeRF is able to be plugged into ANY NeRF representation.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/video_bas.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div> -->
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Visualizations and Analysis</h2>
+        <p class="content has-text-justified">
+          We show the dense reward formulation and representative long-horizon task behaviors in the following video.
+        </p>
+        <video class="feature-video" controls playsinline>
+          <source src="./static/videos/one_minute.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-    <!--/ Matting. -->
 
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">VLM Progress Estimation Visualizations</h2>
+        <p class="content has-text-justified">
+          These videos show additional VLM-based task progress estimation process used during reward construction and value initialization.
+        </p>
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <div class="media-card">
+              <p><strong>VLM analysis example 1</strong></p>
+              <video controls playsinline>
+                <source src="./static/videos/000027_0_vlm_analysis_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="media-card">
+              <p><strong>VLM analysis example 2</strong></p>
+              <video controls playsinline>
+                <source src="./static/videos/000027_2_vlm_analysis_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="media-card">
+              <p><strong>VLM analysis example 3</strong></p>
+              <video controls playsinline>
+                <source src="./static/videos/000062_8_vlm_analysis_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="media-card">
+              <p><strong>VLM analysis example 4</strong></p>
+              <video controls playsinline>
+                <source src="./static/videos/000062_9_vlm_analysis_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparison With Baselines</h2>
+        <p class="content has-text-justified">
+          Each case compares <strong>ours</strong> and the <strong>baseline</strong> side by side. Cases 1 and 2 are in-distribution tasks, while Cases 3 and 4 are out-of-distribution (OOD) tasks.
+        </p>
+
+        <h3 class="title is-4">In-Distribution Tasks</h3>
+
+        <div class="comparison-panel">
+          <h4 class="title is-5">Case 1</h4>
+          <div class="comparison-grid">
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Path</span>
+                  <img src="./static/images/ours_case_1.png" alt="Case 1 ours image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/ours_case_1.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Path</span>
+                  <img src="./static/images/baseline_case_1.png" alt="Case 1 baseline image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/baseline_case_1.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-panel">
+          <h4 class="title is-5">Case 2</h4>
+          <div class="comparison-grid">
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Path</span>
+                  <img src="./static/images/ours_case_2.png" alt="Case 2 ours image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Path</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/ours_case_2.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Path</span>
+                  <img src="./static/images/baseline_case_2.png" alt="Case 2 baseline image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Path</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/baseline_case_2.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Out-of-Distribution Tasks</h3>
+
+        <div class="comparison-panel">
+          <h4 class="title is-5">Case 3</h4>
+          <div class="comparison-grid">
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Path</span>
+                  <img src="./static/images/ours_case_3.png" alt="Case 3 ours image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/ours_case_3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Path</span>
+                  <img src="./static/images/baseline_case_3.png" alt="Case 3 baseline image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/baseline_case_3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-panel">
+          <h4 class="title is-5">Case 4</h4>
+          <div class="comparison-grid">
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Path</span>
+                  <img src="./static/images/ours_case_4.png" alt="Case 4 ours image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label ours">Ours Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/ours_case_4.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="columns comparison-row">
+              <div class="column is-5">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Path</span>
+                  <img src="./static/images/baseline_case_4.png" alt="Case 4 baseline image">
+                </div>
+              </div>
+              <div class="column is-7">
+                <div class="comparison-item">
+                  <span class="comparison-label baseline">Baseline Video</span>
+                  <video controls playsinline>
+                    <source src="./static/videos/baseline_case_4.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -327,7 +477,7 @@
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a> -->
-      <a class="icon-link" href="https://silongyong.github.io/GL-NeRF_project_page/" class="external-link" disabled>
+      <a class="icon-link" href="https://silongyong.github.io/" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
