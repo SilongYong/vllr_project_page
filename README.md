@@ -1,8 +1,8 @@
-# GL-NeRF
+# VLLR: Generalizable Dense Reward for Long-Horizon Robotic Tasks
 
-This is the repository that contains source code for the [GL-NeRF website](https://silongyong.github.io/).
+This is the repository that contains source code for the [VLLR website](https://silongyong.github.io/).
 
-If you find GL-NeRF useful for your work please cite:
+If you find VLLR useful for your work please cite:
 <!-- ```
 @article{park2021nerfies
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
